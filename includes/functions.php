@@ -643,9 +643,9 @@ function getThemeOpt()
 function getColorOpt()
 {
     if (!isset($_COOKIE['color'])) {
-        $color = "#3392CC";
+        $color = "#004BA8";
     } else {
-        $color = "#3392CC";
+        $color = "#004BA8";
     }
     return $color;
 }

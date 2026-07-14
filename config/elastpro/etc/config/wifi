@@ -1,6 +1,6 @@
 
 config setting 'wifi'
-	option enabled '1'
+	option enabled '0'
 
 config setting 'wifi_client'
 	option enabled '0'

@@ -609,6 +609,44 @@ echo "<div class=\"tab-pane $active\" id=\"server$num\">
               </div>
             </div>
 
+            <div name=\"page_http$num\" id=\"page_http$num\">
+              <div class=\"cbi-value\">
+                <label class=\"cbi-value-title\">"; echo _("Enable Self Defined Header"); echo "</label>
+                <input type=\"checkbox\" class=\"cbi-input-checkbox\" name=\"self_define_header$num\" id=\"self_define_header$num\" onchange=\"enableHeader($num)\" value=\"1\"/>
+              </div>
+              <div name=\"page_header$num\" id=\"page_header$num\">
+                <div class=\"cbi-value\">
+                  <label class=\"cbi-value-title\">"; echo _("Header Name"); echo "1</label>
+                  <input type=\"text\" class=\"cbi-input-text\" name=\"header_name1_$num\" id=\"header_name1_$num\" />
+                </div>
+
+                <div class=\"cbi-value\">
+                  <label class=\"cbi-value-title\">"; echo _("Header Value"); echo "1</label>
+                  <input type=\"text\" class=\"cbi-input-text\" name=\"header_value1_$num\" id=\"header_value1_$num\" />
+                </div>
+
+                <div class=\"cbi-value\">
+                  <label class=\"cbi-value-title\">"; echo _("Header Name"); echo "2</label>
+                  <input type=\"text\" class=\"cbi-input-text\" name=\"header_name2_$num\" id=\"header_name2_$num\" />
+                </div>
+
+                <div class=\"cbi-value\">
+                  <label class=\"cbi-value-title\">"; echo _("Header Value"); echo "2</label>
+                  <input type=\"text\" class=\"cbi-input-text\" name=\"header_value2_$num\" id=\"header_value2_$num\" />
+                </div>
+
+                <div class=\"cbi-value\">
+                  <label class=\"cbi-value-title\">"; echo _("Header Name"); echo "3</label>
+                  <input type=\"text\" class=\"cbi-input-text\" name=\"header_name3_$num\" id=\"header_name3_$num\" />
+                </div>
+
+                <div class=\"cbi-value\">
+                  <label class=\"cbi-value-title\">"; echo _("Header Value"); echo "3</label>
+                  <input type=\"text\" class=\"cbi-input-text\" name=\"header_value3_$num\" id=\"header_value3_$num\" />
+                </div>
+              </div><!-- /.page_header1 -->
+            </div>
+
             <div name=\"page_json$num\" id=\"page_json$num\">
               <div class=\"cbi-value\">
                 <label class=\"cbi-value-title\">"; echo _("Enable Self Defined Variable"); echo "</label>

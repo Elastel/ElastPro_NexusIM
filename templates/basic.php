@@ -25,7 +25,7 @@
           <?php echo \ElastPro\Tokens\CSRF::hiddenField();;
             echo '<div class="cbi-section cbi-tblsection">';
 
-            RadioControlCustom(_('Data Collect'), 'enabled', 'basic', 'enableBasic');
+            RadioControlCustom(_('Sensor Data'), 'enabled', 'basic', 'enableBasic');
             echo '<div id="page_basic" name="page_basic">';
 
             InputControlCustom(_('Collect Period'), 'collect_period', 'collect_period', _('Seconds'), '5');

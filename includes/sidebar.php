@@ -52,7 +52,7 @@
         <li class="nav-item" id="page_dct">
             <a class="nav-link navbar-toggle collapsed" id="dct" href="#" data-toggle="collapse" data-target="#navbar-collapse-dct">
                 <i class="fas fa-exchange-alt fa-fw mr-2"></i>
-                <span class="nav-label"><?php echo _("Data Collect"); ?></a>
+                <span class="nav-label"><?php echo _("Sensor Data"); ?></a>
             </a>
             <div class="collapse navbar-collapse" id="navbar-collapse-dct">
             <ul class="nav navbar-nav navbar-right">
@@ -135,9 +135,6 @@
             </a>
             <div class="collapse navbar-collapse" id="navbar-collapse-remote">
                 <ul class="nav navbar-nav navbar-right">
-                    <?php if ((strpos($target, "IQEG") === false && strpos($target, "IQEC") === false)) { ?>
-                        <li class="nav-item" name="things_wing" id="remote_things_wing"> <a class="nav-link" href="things_wing"><?php echo _("ThingsWing"); ?></a></li>
-                    <?php } ?>
                     <?php if(isBinExists("noip2")) : ?>
                     <li class="nav-item" name="ddns" id="remote_ddns"> <a class="nav-link" href="ddns"><?php echo _("DDNS"); ?></a></li>
                     <?php endif; ?>

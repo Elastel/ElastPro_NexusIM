@@ -1,6 +1,6 @@
 {
-    "name": "ElastPro",
-    "short_name": "ElastPro",
+    "name": "NexusEdgeGw",
+    "short_name": "NexusEdgeGw",
     "icons": [
         {
             "src": "/dist/icons/android-chrome-192x192.png",

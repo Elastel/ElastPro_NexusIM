@@ -441,7 +441,7 @@ export function addSectionTable(table_name, jsonData, option_list) {
                              key + '" ' + (jsonData[i][key] == '1' ? 'checked' : ' ') + 
                              ' onclick="updateData(\''+table_name+'\')"></td>\n';
             } else if (key == 'belonged_com' && jsonData[i][key].includes('TCP')) {
-                contents += '   <td style="text-align:center" name="'+key+'">Network Node'+ jsonData[i][key][3] +'</td>\n';
+                contents += '   <td style="text-align:center" name="'+key+'">'+ jsonData[i][key].replace('TCP', 'Network Node') +'</td>\n';
             } else {
                 contents += '   <td style="text-align:center" name="'+key+'">'+ ((mode == 1 && key == 'debounce_interval') ? '-' : jsonData[i][key]) +'</td>\n';
             }
@@ -659,6 +659,8 @@ export function addData(table_name) {
     enableAlarm(table_name);
     if (table_name == 'dnp3') {
         groupIdChange();
+    } else if (table_name == 'system_param') {
+        systemParamChange(table_name)
     }
 }
 
@@ -729,7 +731,7 @@ export function get_table_data(table_name, option_list) {
                     
                     tmp += '"' + option + '":"' + cur_status + '",';
                 } else if (option == "belonged_com"  && val.includes('Network')) {
-                    tmp += '"' + option + '":"TCP' + val.slice(-1) + '",'
+                    tmp += '"' + option + '":"' + val.replace('Network Node', 'TCP') + '",'
                 } else  {
                     tmp += '"' + option + '":"' + val + '",';
                 }
@@ -814,6 +816,8 @@ export function saveData(table_name) {
             // console.log(option);
             if (option != null)
                 option_value[option] = (mode == 1 && option == 'debounce_interval') ? '-' : document.getElementById(table_name + '.'  + option).value;
+
+            // console.log(option_value[option]);
         }
     })
 
@@ -841,7 +845,7 @@ export function saveData(table_name) {
                 contents += '   <td style="' + ((option == 'enabled') ? 'text-align:center' : 'display:none') + '"><input type="checkbox" name="' + option
                 +'" ' + (option_value[option] == '1' ? 'checked' : ' ') + ' onclick="updateData(\''+table_name+'\')"></td>\n';
             } else if (option == "belonged_com"  && option_value[option].includes('TCP')) {
-                contents += '   <td style="text-align:center" name="'+option+'">Network Node' + (option_value[option][3]) +'</td>\n';
+                contents += '   <td style="text-align:center" name="'+option+'">' + option_value[option].replace('TCP', 'Network Node') +'</td>\n';
             } else {
                 contents += '   <td style="text-align:center" name="'+option+'">'+ (option_value[option] ? option_value[option] : "-") +'</td>\n';
             }
@@ -961,7 +965,7 @@ export function editData(object, table_name) {
         } else if (option == 'cur_status') {
             document.getElementById(table_name + '.'  + option).innerHTML = val;
         } else if (option == "belonged_com"  && val.includes('Network')) {
-            document.getElementById(table_name + '.'  + option).value = 'TCP' + val.slice(-1);
+            document.getElementById(table_name + '.'  + option).value = val.replace('Network Node', 'TCP');
         } else {
             document.getElementById(table_name + '.'  + option).value = val;
             if (table_name == 'dnp3' && option == 'group_id') {
