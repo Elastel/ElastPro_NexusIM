@@ -287,6 +287,8 @@ cp $path/installers/service*.sh /etc/raspap/hostapd
 cp $path/installers/configport.sh /etc/raspap/lighttpd/
 cp $path/installers/bacnet_update /usr/sbin/
 cp $path/config/edaemon.conf /etc/edaemon.conf
+cp $path/config/splash.png /usr/share/plymouth/themes/pix/
+plymouth-set-default-theme --rebuild-initrd pix
 sync
 sleep 1
 
